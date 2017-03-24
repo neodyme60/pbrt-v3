@@ -162,7 +162,7 @@ TEST(EXR, BasicRoundTrip) {
     EXPECT_EQ(height, readImage.height);
     EXPECT_EQ(TINYEXR_PIXELTYPE_FLOAT, readImage.pixel_types[0]);
     for (int i = 0; i < width * height; ++i)
-        if (!isnan(buf[i]))
+        if (!std::isnan(buf[i]))
             EXPECT_EQ(buf[i], ((float *)readImage.images[0])[i]);
 }
 
